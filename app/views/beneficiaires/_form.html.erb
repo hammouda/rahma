@@ -1,0 +1,102 @@
+<%= form_for(beneficiaire) do |f| %>
+  <% if beneficiaire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(beneficiaire.errors.count, "error") %> prohibited this beneficiaire from being saved:</h2>
+
+      <ul>
+      <% beneficiaire.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom %>
+    <%= f.text_field :nom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prenom %>
+    <%= f.text_field :prenom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :etat_civil %>
+    <%= f.text_field :etat_civil %>
+  </div>
+
+  <div class="field">
+    <%= f.label :metier %>
+    <%= f.text_field :metier %>
+  </div>
+
+  <div class="field">
+    <%= f.label :num_cnss %>
+    <%= f.number_field :num_cnss %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lieu_naissance %>
+    <%= f.text_field :lieu_naissance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_naissance %>
+    <%= f.date_select :date_naissance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :adresse %>
+    <%= f.text_field :adresse %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone %>
+    <%= f.number_field :telephone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nom_conjoint %>
+    <%= f.text_field :nom_conjoint %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prenom_conjoint %>
+    <%= f.text_field :prenom_conjoint %>
+  </div>
+
+  <div class="field">
+    <%= f.label :metier_conjoint %>
+    <%= f.text_field :metier_conjoint %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lieu_naissance_conjoint %>
+    <%= f.text_field :lieu_naissance_conjoint %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone_conjoint %>
+    <%= f.number_field :telephone_conjoint %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nbre_membre_famille %>
+    <%= f.number_field :nbre_membre_famille %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nbre_garcon %>
+    <%= f.number_field :nbre_garcon %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nbre_fille %>
+    <%= f.number_field :nbre_fille %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

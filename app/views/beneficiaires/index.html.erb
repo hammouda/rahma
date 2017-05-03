@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Beneficiaires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Etat civil</th>
+      <th>Metier</th>
+      <th>Num cnss</th>
+      <th>Lieu naissance</th>
+      <th>Date naissance</th>
+      <th>Adresse</th>
+      <th>Telephone</th>
+      <th>Nom conjoint</th>
+      <th>Prenom conjoint</th>
+      <th>Metier conjoint</th>
+      <th>Lieu naissance conjoint</th>
+      <th>Telephone conjoint</th>
+      <th>Nbre membre famille</th>
+      <th>Nbre garcon</th>
+      <th>Nbre fille</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beneficiaires.each do |beneficiaire| %>
+      <tr>
+        <td><%= beneficiaire.nom %></td>
+        <td><%= beneficiaire.prenom %></td>
+        <td><%= beneficiaire.etat_civil %></td>
+        <td><%= beneficiaire.metier %></td>
+        <td><%= beneficiaire.num_cnss %></td>
+        <td><%= beneficiaire.lieu_naissance %></td>
+        <td><%= beneficiaire.date_naissance %></td>
+        <td><%= beneficiaire.adresse %></td>
+        <td><%= beneficiaire.telephone %></td>
+        <td><%= beneficiaire.nom_conjoint %></td>
+        <td><%= beneficiaire.prenom_conjoint %></td>
+        <td><%= beneficiaire.metier_conjoint %></td>
+        <td><%= beneficiaire.lieu_naissance_conjoint %></td>
+        <td><%= beneficiaire.telephone_conjoint %></td>
+        <td><%= beneficiaire.nbre_membre_famille %></td>
+        <td><%= beneficiaire.nbre_garcon %></td>
+        <td><%= beneficiaire.nbre_fille %></td>
+        <td><%= link_to 'Show', beneficiaire %></td>
+        <td><%= link_to 'Edit', edit_beneficiaire_path(beneficiaire) %></td>
+        <td><%= link_to 'Destroy', beneficiaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Beneficiaire', new_beneficiaire_path %>

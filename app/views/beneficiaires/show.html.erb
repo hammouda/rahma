@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @beneficiaire.nom %>
+</p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @beneficiaire.prenom %>
+</p>
+
+<p>
+  <strong>Etat civil:</strong>
+  <%= @beneficiaire.etat_civil %>
+</p>
+
+<p>
+  <strong>Metier:</strong>
+  <%= @beneficiaire.metier %>
+</p>
+
+<p>
+  <strong>Num cnss:</strong>
+  <%= @beneficiaire.num_cnss %>
+</p>
+
+<p>
+  <strong>Lieu naissance:</strong>
+  <%= @beneficiaire.lieu_naissance %>
+</p>
+
+<p>
+  <strong>Date naissance:</strong>
+  <%= @beneficiaire.date_naissance %>
+</p>
+
+<p>
+  <strong>Adresse:</strong>
+  <%= @beneficiaire.adresse %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @beneficiaire.telephone %>
+</p>
+
+<p>
+  <strong>Nom conjoint:</strong>
+  <%= @beneficiaire.nom_conjoint %>
+</p>
+
+<p>
+  <strong>Prenom conjoint:</strong>
+  <%= @beneficiaire.prenom_conjoint %>
+</p>
+
+<p>
+  <strong>Metier conjoint:</strong>
+  <%= @beneficiaire.metier_conjoint %>
+</p>
+
+<p>
+  <strong>Lieu naissance conjoint:</strong>
+  <%= @beneficiaire.lieu_naissance_conjoint %>
+</p>
+
+<p>
+  <strong>Telephone conjoint:</strong>
+  <%= @beneficiaire.telephone_conjoint %>
+</p>
+
+<p>
+  <strong>Nbre membre famille:</strong>
+  <%= @beneficiaire.nbre_membre_famille %>
+</p>
+
+<p>
+  <strong>Nbre garcon:</strong>
+  <%= @beneficiaire.nbre_garcon %>
+</p>
+
+<p>
+  <strong>Nbre fille:</strong>
+  <%= @beneficiaire.nbre_fille %>
+</p>
+
+<%= link_to 'Edit', edit_beneficiaire_path(@beneficiaire) %> |
+<%= link_to 'Back', beneficiaires_path %>
