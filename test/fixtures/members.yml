@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom: MyString
+  prenom: MyString
+  date_naissance: 2017-05-03
+  age: 1
+  sexe: MyString
+  etat_medical: MyString
+  remarque: MyText
+  beneficiare: one
+
+two:
+  nom: MyString
+  prenom: MyString
+  date_naissance: 2017-05-03
+  age: 1
+  sexe: MyString
+  etat_medical: MyString
+  remarque: MyText
+  beneficiare: two
