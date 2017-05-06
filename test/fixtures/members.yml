@@ -3,19 +3,17 @@
 one:
   nom: MyString
   prenom: MyString
-  date_naissance: 2017-05-03
-  age: 1
-  sexe: MyString
+  date_naissance: 2017-05-06
   etat_medical: MyString
+  sexe: MyString
   remarque: MyText
-  beneficiare: one
+  beneficiaire: one
 
 two:
   nom: MyString
   prenom: MyString
-  date_naissance: 2017-05-03
-  age: 1
-  sexe: MyString
+  date_naissance: 2017-05-06
   etat_medical: MyString
+  sexe: MyString
   remarque: MyText
-  beneficiare: two
+  beneficiaire: two

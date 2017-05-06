@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date naissance</th>
+      <th>Etat medical</th>
+      <th>Sexe</th>
+      <th>Remarque</th>
+      <th>Beneficiaire</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.nom %></td>
+        <td><%= member.prenom %></td>
+        <td><%= member.date_naissance %></td>
+        <td><%= member.etat_medical %></td>
+        <td><%= member.sexe %></td>
+        <td><%= member.remarque %></td>
+        <td><%= member.beneficiaire %></td>
+        <td><%= link_to 'Show', beneficiaire_member_path(@beneficiaire, member) %></td>
+        <td><%= link_to 'Edit', edit_beneficiaire_member_path(@beneficiaire, member) %></td>
+        <td><%= link_to 'Destroy', beneficiaire_member_path(@beneficiaire, member), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member', new_beneficiaire_member_path %>

@@ -4,11 +4,10 @@ class CreateMembers < ActiveRecord::Migration[5.0]
       t.string :nom
       t.string :prenom
       t.date :date_naissance
-      t.integer :age
-      t.string :sexe
       t.string :etat_medical
+      t.string :sexe
       t.text :remarque
-      t.references :beneficiare, foreign_key: true
+      t.references :beneficiaire, foreign_key: true
 
       t.timestamps
     end

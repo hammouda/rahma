@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @member.nom %>
+</p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @member.prenom %>
+</p>
+
+<p>
+  <strong>Date naissance:</strong>
+  <%= @member.date_naissance %>
+</p>
+
+<p>
+  <strong>Etat medical:</strong>
+  <%= @member.etat_medical %>
+</p>
+
+<p>
+  <strong>Sexe:</strong>
+  <%= @member.sexe %>
+</p>
+
+<p>
+  <strong>Remarque:</strong>
+  <%= @member.remarque %>
+</p>
+
+<p>
+  <strong>Beneficiaire:</strong>
+  <%= @beneficiaire.nom %>
+</p>
+
+<%= link_to 'Edit', edit_beneficiaire_member_path(@member.beneficiaire_id, @member) %> |
+<%= link_to 'Back', beneficiaire_member_path %>

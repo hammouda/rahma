@@ -1,0 +1,52 @@
+<%= form_for ([@beneficiaire, @member]) do |f| %>
+  <% if member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom %>
+    <%= f.text_field :nom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prenom %>
+    <%= f.text_field :prenom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_naissance %>
+    <%= f.date_select :date_naissance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :etat_medical %>
+    <%= f.text_field :etat_medical %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sexe %>
+    <%= f.text_field :sexe %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remarque %>
+    <%= f.text_area :remarque %>
+  </div>
+
+  <div class="field">
+    <%= f.label :beneficiaire %>
+    <%=f.select :beneficiaire_id, options_for_select(Beneficiaire.all.map{|b| [b.id]})%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

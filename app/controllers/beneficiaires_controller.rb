@@ -10,6 +10,7 @@ class BeneficiairesController < ApplicationController
   # GET /beneficiaires/1
   # GET /beneficiaires/1.json
   def show
+
   end
 
   # GET /beneficiaires/new

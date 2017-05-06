@@ -1,3 +1,3 @@
 class Member < ApplicationRecord
-  belongs_to :beneficiare 
+  belongs_to :beneficiaire
 end

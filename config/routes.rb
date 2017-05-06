@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :beneficiaires do
-    resources :members
+        resources :members
   end
+
+
   get 'home/index'
 
   root to: "home#index"
