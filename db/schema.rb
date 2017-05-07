@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506090156) do
+ActiveRecord::Schema.define(version: 20170507103002) do
 
   create_table "beneficiaires", force: :cascade do |t|
     t.string   "nom"
@@ -45,6 +45,41 @@ ActiveRecord::Schema.define(version: 20170506090156) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["beneficiaire_id"], name: "index_members_on_beneficiaire_id"
+  end
+
+  create_table "service_beneficiaires", force: :cascade do |t|
+    t.decimal  "cout"
+    t.date     "date_service"
+    t.integer  "service_id"
+    t.integer  "beneficiaire_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["beneficiaire_id"], name: "index_service_beneficiaires_on_beneficiaire_id"
+    t.index ["service_id"], name: "index_service_beneficiaires_on_service_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "nom"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

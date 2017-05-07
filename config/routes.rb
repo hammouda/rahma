@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :service_beneficiaires
+  resources :services
   resources :beneficiaires do
         resources :members
   end

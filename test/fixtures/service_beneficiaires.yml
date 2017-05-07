@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cout: 9.99
+  date_service: 2017-05-07
+  service: one
+  beneficiaire: one
+
+two:
+  cout: 9.99
+  date_service: 2017-05-07
+  service: two
+  beneficiaire: two

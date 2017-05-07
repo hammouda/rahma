@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Service Beneficiaires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cout</th>
+      <th>Date service</th>
+      <th>Service</th>
+      <th>Beneficiaire</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_beneficiaires.each do |service_beneficiaire| %>
+      <tr>
+        <td><%= service_beneficiaire.cout %></td>
+        <td><%= service_beneficiaire.date_service %></td>
+        <td><%= service_beneficiaire.service %></td>
+        <td><%= service_beneficiaire.beneficiaire %></td>
+        <td><%= link_to 'Show', service_beneficiaire %></td>
+        <td><%= link_to 'Edit', edit_service_beneficiaire_path(service_beneficiaire) %></td>
+        <td><%= link_to 'Destroy', service_beneficiaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service Beneficiaire', new_service_beneficiaire_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cout:</strong>
+  <%= @service_beneficiaire.cout %>
+</p>
+
+<p>
+  <strong>Date service:</strong>
+  <%= @service_beneficiaire.date_service %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @service_beneficiaire.service %>
+</p>
+
+<p>
+  <strong>Beneficiaire:</strong>
+  <%= @service_beneficiaire.beneficiaire %>
+</p>
+
+<%= link_to 'Edit', edit_service_beneficiaire_path(@service_beneficiaire) %> |
+<%= link_to 'Back', service_beneficiaires_path %>
