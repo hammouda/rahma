@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :etat_civil %>
-    <%= f.text_field :etat_civil %>
+    <%= f.label :etat_marital %>
+    <%= f.select :etat_civil, options_for_select(['celebataire','marié(e)','dévorcé(e)','veuf(ve)']) %>
   </div>
 
   <div class="field">

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Service Beneficiaires</h1>
+<h1>Service/Beneficiaires</h1>
 
 <table>
   <thead>
@@ -18,8 +18,8 @@
       <tr  class="<%=cycle('list_line_even','list_line_odd') %>">
         <td><%= service_beneficiaire.cout %></td>
         <td><%= service_beneficiaire.date_service %></td>
-        <td><%= service_beneficiaire.service %></td>
-        <td><%= service_beneficiaire.beneficiaire %></td>
+        <td><%= service_beneficiaire.service.nom %></td>
+        <td><%= service_beneficiaire.beneficiaire.nom %></td>
         <td><%= link_to 'Show', service_beneficiaire %></td>
         <td><%= link_to 'Edit', edit_service_beneficiaire_path(service_beneficiaire) %></td>
         <td><%= link_to 'Destroy', service_beneficiaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,5 +29,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Service Beneficiaire', new_service_beneficiaire_path %>
+<div class="btn btn-default">
+<%= link_to 'Nouveau Service_Beneficiaire', new_service_beneficiaire_path %>
+</div>

@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= f.label :sexe %>
-    <%= f.text_field :sexe %>
+    <%= f.select :sexe, options_for_select(['f','m'])%>
   </div>
 
   <div class="field">
@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= f.label :beneficiaire %>
-    <%=f.select :beneficiaire_id, options_for_select(Beneficiaire.all.map{|b| [b.id]})%>
+    <%=f.select :beneficiaire_id, options_for_select(Beneficiaire.all.map{|b| [b.nom, b.id]})%>
   </div>
 
   <div class="actions">

@@ -12,12 +12,12 @@
 
 <p>
   <strong>Service:</strong>
-  <%= @service_beneficiaire.service %>
+  <%= @service_beneficiaire.service.nom %>
 </p>
 
 <p>
   <strong>Beneficiaire:</strong>
-  <%= @service_beneficiaire.beneficiaire %>
+  <%= @service_beneficiaire.beneficiaire.nom %>
 </p>
 
 <%= link_to 'Edit', edit_service_beneficiaire_path(@service_beneficiaire) %> |
