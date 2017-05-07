@@ -15,7 +15,7 @@
 
   <tbody>
     <% @service_beneficiaires.each do |service_beneficiaire| %>
-      <tr>
+      <tr  class="<%=cycle('list_line_even','list_line_odd') %>">
         <td><%= service_beneficiaire.cout %></td>
         <td><%= service_beneficiaire.date_service %></td>
         <td><%= service_beneficiaire.service %></td>

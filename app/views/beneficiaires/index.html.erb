@@ -28,7 +28,7 @@
 
   <tbody>
     <% @beneficiaires.each do |beneficiaire| %>
-      <tr>
+      <tr class="<%=cycle('list_line_even','list_line_odd') %>">
         <td><%= beneficiaire.nom %></td>
         <td><%= beneficiaire.prenom %></td>
         <td><%= beneficiaire.etat_civil %></td>

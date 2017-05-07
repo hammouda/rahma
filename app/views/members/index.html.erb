@@ -18,7 +18,7 @@
 
   <tbody>
     <% @members.each do |member| %>
-      <tr>
+      <tr  class="<%=cycle('list_line_even','list_line_odd') %>">
         <td><%= member.nom %></td>
         <td><%= member.prenom %></td>
         <td><%= member.date_naissance %></td>
