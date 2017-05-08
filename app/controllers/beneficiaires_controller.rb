@@ -4,7 +4,11 @@ class BeneficiairesController < ApplicationController
   # GET /beneficiaires
   # GET /beneficiaires.json
   def index
-    @beneficiaires = Beneficiaire.all
+    @beneficiaires = if params[:term]
+        Beneficiaire.where('nom LIKE ? or prenom LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%")
+    else
+        Beneficiaire.all
+    end
   end
 
   # GET /beneficiaires/1
@@ -70,6 +74,6 @@ class BeneficiairesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beneficiaire_params
-      params.require(:beneficiaire).permit(:nom, :prenom, :etat_civil, :metier, :num_cnss, :lieu_naissance, :date_naissance, :adresse, :telephone, :nom_conjoint, :prenom_conjoint, :metier_conjoint, :lieu_naissance_conjoint, :telephone_conjoint, :nbre_membre_famille, :nbre_garcon, :nbre_fille)
+      params.require(:beneficiaire).permit(:nom, :prenom, :etat_civil, :metier, :num_cnss, :lieu_naissance, :date_naissance, :adresse, :telephone, :nom_conjoint, :prenom_conjoint, :metier_conjoint, :lieu_naissance_conjoint, :telephone_conjoint, :nbre_membre_famille, :nbre_garcon, :nbre_fille, :term)
     end
 end

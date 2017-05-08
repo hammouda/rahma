@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Service/Beneficiaires</h1>
-
+<div >
+<%=form_tag(service_beneficiaires_path, method: :get) do %>
+<%= date_field_tag :term, params[:term] %>
+<%=submit_tag :Search  %>
+<% end %>
+</div>
 <table>
   <thead>
     <tr>

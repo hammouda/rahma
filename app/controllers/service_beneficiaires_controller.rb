@@ -4,7 +4,11 @@ class ServiceBeneficiairesController < ApplicationController
   # GET /service_beneficiaires
   # GET /service_beneficiaires.json
   def index
-    @service_beneficiaires = ServiceBeneficiaire.all
+    @service_beneficiaires = if params[:term]
+        ServiceBeneficiaire.where('date_service LIKE ?',"%#{params[:term]}%")
+    else
+        ServiceBeneficiaire.all
+    end
   end
 
   # GET /service_beneficiaires/1

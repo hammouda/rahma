@@ -4,7 +4,11 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.all
+    @services = if params[:term]
+        Service.where('nom LIKE ?',"%#{params[:term]}%")
+    else
+        Service.all
+    end
   end
 
   # GET /services/1
@@ -69,6 +73,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:nom, :description)
+      params.require(:service).permit(:nom, :description, :term)
     end
 end
