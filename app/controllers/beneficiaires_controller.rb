@@ -5,9 +5,9 @@ class BeneficiairesController < ApplicationController
   # GET /beneficiaires.json
   def index
     @beneficiaires = if params[:term]
-        Beneficiaire.where('nom LIKE ? or prenom LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%")
+        Beneficiaire.where('nom LIKE ? or prenom LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").order(:nom).page(params[:page]).per(5)
     else
-        Beneficiaire.all
+        Beneficiaire.all.order(:nom).page(params[:page]).per(1)
     end
   end
 

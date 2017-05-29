@@ -1,20 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Beneficiaires</h1>
+
 <div class="nav navbar-right">
+<% #form de recherche%>
 <%=form_tag(beneficiaires_path, method: :get) do %>
 <%= text_field_tag :term, params[:term] %>
 <%=submit_tag :Search  %>
 <% end %>
 </div>
+
 <table>
   <thead>
     <tr>
       <th>Nom</th>
       <th>Prenom</th>
-      <th>Etat civil</th>
+      <th>Etat marital</th>
       <th>Metier</th>
-      <th>Num cnss</th>
+      <th>Numero cnss</th>
       <th>Lieu naissance</th>
       <th>Date naissance</th>
       <th>Adresse</th>
@@ -58,7 +61,9 @@
     <% end %>
   </tbody>
 </table>
-
+<div class="nav navbar-right">
+<%= paginate @beneficiaires %>
+</div>
 <br>
 <div class="btn btn-default">
 <%= link_to 'Nouveau Beneficiaire', new_beneficiaire_path %>
