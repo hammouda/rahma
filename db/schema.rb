@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 20170507103002) do
     t.index ["beneficiaire_id"], name: "index_members_on_beneficiaire_id"
   end
 
+    create_table "services", force: :cascade do |t|
+      t.string   "nom"
+      t.text     "description"
+      t.datetime "created_at",  null: false
+      t.datetime "updated_at",  null: false
+    end
   create_table "service_beneficiaires", force: :cascade do |t|
     t.decimal  "cout"
     t.date     "date_service"
@@ -58,12 +64,6 @@ ActiveRecord::Schema.define(version: 20170507103002) do
     t.index ["service_id"], name: "index_service_beneficiaires_on_service_id"
   end
 
-  create_table "services", force: :cascade do |t|
-    t.string   "nom"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
